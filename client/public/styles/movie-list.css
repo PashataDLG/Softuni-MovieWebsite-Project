@@ -1,0 +1,49 @@
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+
+.movie {
+    text-align: center;
+}
+
+.movie-list .movie:nth-child(odd):last-child {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.movie img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.movie h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+@media (max-width: 991px) {
+    .movie {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 767px) {
+    .movie {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .movie-list {
+        justify-content: center;
+    }
+}

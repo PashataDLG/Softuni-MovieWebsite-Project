@@ -1,0 +1,14 @@
+.featured-section {
+    padding: 33px;
+    text-align: center;
+    max-width: 81%;
+    margin: 0 auto;
+}
+
+.featured-section h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    color: #ffffff;
+}

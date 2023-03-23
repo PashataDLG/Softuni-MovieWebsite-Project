@@ -1,0 +1,35 @@
+.create-section {
+    border-style: #dbb11a;
+    padding: 50px;
+    text-align: center;
+    margin-block: 2rem;
+    max-width: 600px;
+    margin: 64px auto;
+    background-color: #000000;
+    border: 2px solid #dbb11a;
+}
+
+.create-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.create-section p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.movie-quote {
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.movie-quote p {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #ffffff
+}

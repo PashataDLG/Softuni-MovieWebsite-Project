@@ -1,0 +1,147 @@
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    border: 2px solid #dbb11a;
+    background-color: #000000;
+    padding: 20px;
+}
+
+.movie-details__info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.movie-details__poster {
+    flex-basis: 300px;
+    margin-right: 20px;
+}
+
+.movie-details__poster img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #dbb11a;
+}
+
+.movie-details__content {
+    flex: 1;
+}
+
+.movie-details__title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.movie-details__description {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.movie-details__genre {
+    font-size: 16px;
+    color: #fff;
+}
+
+.movie-details__comments {
+    margin-top: 20px;
+}
+
+.movie-details__comments-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.movie-details__comments-list {
+    margin-bottom: 20px;
+}
+
+.movie-details__comment {
+    background-color: #000000;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #dbb11a;
+}
+
+.movie-details__comment-user {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.movie-details__comment-text {
+    font-size: 16px;
+    color: #fff;
+}
+
+.movie-details__comment-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 640px;
+}
+
+.movie-details__comment-form-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.movie-details__comment-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.movie-details__comment-form input,
+.movie-details__comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 2px solid #dbb11a;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.movie-details__comment-form input#name {
+    width: 640px;
+}
+
+.movie-details__comment-form textarea#comment {
+    border-radius: 4px;
+    resize: none;
+    height: 100px;
+    width: 640px;
+}
+
+.movie-details__comment-form textarea {
+    resize: vertical;
+    width: 640px;
+}
+
+.btn.btn-primary {
+    display: inline-block;
+    background-color: #dbb11a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #796724;
+}
+
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}

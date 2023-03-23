@@ -1,0 +1,19 @@
+.hero-section {
+    background-image: url("https://img.freepik.com/free-vector/film-strip-with-light-effect-cinema-background_1017-38171.jpg");
+    background-size: cover;
+    background-position: 50% 10%;
+    padding: 50px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #fffcfc;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
