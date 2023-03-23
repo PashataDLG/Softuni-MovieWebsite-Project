@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
+import { useForm } from "../../hooks/useForm";
+
 export default function Login() {
+    const { values, changeHandler, onSubmit } = useForm([{}])
     return (
         <div className="login-page">
             <form>
