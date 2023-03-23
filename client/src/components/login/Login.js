@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Login() {
     return (
         <div className="login-page">
@@ -10,9 +12,9 @@ export default function Login() {
                 <button type="submit">Login</button>
                 <p className="login-p">
                     <span>Don't have an account?</span>{" "}
-                    <a href="#" className="hovered">
+                    <Link to="/register" className="hovered">
                         Register
-                    </a>
+                    </Link>
                 </p>
             </form>
         </div>

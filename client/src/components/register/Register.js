@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Register() {
     return (
         <div className="register-page">
@@ -27,9 +29,9 @@ export default function Register() {
                 <button type="submit">Register</button>
                 <p className="register-p">
                     <span>You have an account?</span>{" "}
-                    <a href="#" className="hovered">
+                    <Link to="/login" className="hovered">
                         Login
-                    </a>
+                    </Link>
                 </p>
             </form>
         </div>

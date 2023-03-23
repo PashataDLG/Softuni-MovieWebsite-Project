@@ -1,36 +1,36 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-brand">
-                <a href="index.html">
+                <Link to="/">
                     <img
                         src="https://www.justwatch.com/appassets/img/logo/JustWatch-logo-large.png"
                         alt="Logo"
                     />
-                </a>
+                </Link>
             </div>
             <div className="navbar-links">
-                <a href="index.html" className="navbar-link">
+                <Link to="/" className="navbar-link">
                     Home
-                </a>
-                <a href="catalog.html" className="navbar-link">
+                </Link>
+                <Link to="/catalog" className="navbar-link">
                     Catalog
-                </a>
-                <a href="about.html" className="navbar-link">
-                    About
-                </a>
-                <a href="login.html" className="btn btn-primary">
+                </Link>
+                <Link to="/add-movie" className="navbar-link">
+                    Add movie
+                </Link>
+                <Link to="/login" className="btn btn-primary">
                     Login
-                </a>
-                <a href="login.html" className="btn btn-primary">
+                </Link>
+                <Link to="/register" className="btn btn-primary">
                     Register
-                </a>
-            </div>
-            <button className="navbar-toggle">
-                <span />
-                <span />
-                <span />
-            </button>
+                </Link>
+                <Link to="/#" className="btn btn-primary">
+                    Logout
+                </Link>
+            </div>           
         </nav>
     );
 };
