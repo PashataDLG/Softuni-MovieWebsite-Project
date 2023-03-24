@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
+import AuthProvider from './context/AuthContext';
+
 import AddMovie from './components/add-movie/AddMovie';
 import Catalog from './components/catalog/Catlog';
 import Details from './components/details/Details';
@@ -12,21 +14,23 @@ import Register from './components/register/Register';
 
 function App() {
 	return (
-		<>
-			<Navbar />
-			<main>
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/login' element={<Login />} />
-					<Route path='/register' element={<Register />} />
-					<Route path='/catalog' element={<Catalog />} />
-					<Route path='/add-movie' element={<AddMovie />} />
-					<Route path='/edit-movie' element={<EditMovie />} />
-					<Route path='/details/:id' element={<Details />} />
-				</Routes>
-			</main>
-			<Footer />
-		</>
+		<AuthProvider>
+			<>
+				<Navbar />
+				<main>
+					<Routes>
+						<Route path='/' element={<Home />} />
+						<Route path='/login' element={<Login />} />
+						<Route path='/register' element={<Register />} />
+						<Route path='/catalog' element={<Catalog />} />
+						<Route path='/add-movie' element={<AddMovie />} />
+						<Route path='/edit-movie' element={<EditMovie />} />
+						<Route path='/details/:id' element={<Details />} />
+					</Routes>
+				</main>
+				<Footer />
+			</>
+		</AuthProvider>
 	);
 }
 
