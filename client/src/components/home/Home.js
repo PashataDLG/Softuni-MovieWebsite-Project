@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
+import { AuthContext } from "../../context/AuthContext";
+
 export default function Home() {
+    const { userId } = useContext(AuthContext);
     return (
         <>
             <section className="hero-section">
@@ -47,14 +51,16 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            {/* If user is not authorized show this */}
-            <section className="create-section">
-                <h2>Create Your Own List</h2>
-                <p>Sign up now and start creating your own list of movies.</p>
-                <Link to="/register" className="btn btn-secondary">
-                    Get Started
-                </Link>
-            </section>
+            {!userId &&
+                <section className="create-section">
+                    <h2>Create Your Own List</h2>
+                    <p>Sign up now and start creating your own list of movies.</p>
+                    <Link to="/register" className="btn btn-secondary">
+                        Get Started
+                    </Link>
+                </section>
+            }
+
         </>
     );
 };
