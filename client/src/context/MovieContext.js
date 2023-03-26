@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import * as movieService from '../services/movieService'
 
@@ -8,15 +9,29 @@ export default function MovieProvider({
     children,
 }) {
     const [movies, setMovies] = useState([]);
+    const navigate = useNavigate();
 
-    const getAllMovies = async () => {
-        const result = await movieService.getAll();
+    useEffect(() => {
+        movieService.getAll()
+            .then(result => {
+                setMovies(result);
+            })
+            .catch((err) => {
+                alert(err);
+            })
+    }, []);
 
-        setMovies(result);
+    const onCreateMovieSubmit = async (movieData) => {
+        const result = await movieService.create(movieData);
+
+        setMovies(state => [...state, result]);
+
+        navigate('/catalog');
     };
 
     const contextValues = {
         movies,
+        onCreateMovieSubmit,
     }
 
     return (
