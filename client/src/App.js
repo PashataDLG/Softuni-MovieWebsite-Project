@@ -11,6 +11,7 @@ import Home from './components/home/Home';
 import Login from './components/login/Login';
 import Navbar from './components/navbar/Navbar';
 import Register from './components/register/Register';
+import Logout from './components/logout/Logout';
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 						<Route path='/' element={<Home />} />
 						<Route path='/login' element={<Login />} />
 						<Route path='/register' element={<Register />} />
+						<Route path='/logout' element={<Logout />} />
 						<Route path='/catalog' element={<Catalog />} />
 						<Route path='/add-movie' element={<AddMovie />} />
 						<Route path='/edit-movie' element={<EditMovie />} />

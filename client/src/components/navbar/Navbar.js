@@ -28,7 +28,7 @@ export default function Navbar() {
                     Add movie
                 </Link>
                 {userId && (<>
-                    <Link to="/#" className="btn btn-primary">
+                    <Link to="/logout" className="btn btn-primary">
                         Logout
                     </Link>
                 </>)}

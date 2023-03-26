@@ -41,10 +41,16 @@ export default function AuthProvider({
         }
     };
 
+    const onLogout = async () => {
+        setAuth({});
+    };
+
     const contextValues = {
         onLoginSubmit,
         onRegisterSubmit,
-        userId: auth._id
+        onLogout,
+        userId: auth._id,
+        token: auth.accessToken,
     }
 
     return (
