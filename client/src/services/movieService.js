@@ -4,8 +4,8 @@ const baseUrl = 'http://localhost:3030/data/movies';
 
 export const getAll = () => request.get(baseUrl);
 
-export const create = (gameData) => request.post(baseUrl, gameData);
+export const create = (movieData) => request.post(baseUrl, movieData);
 
-export const edit = (gameData, gameId) => request.put(`${baseUrl}/${gameId}`, gameData);
+export const edit = (movieData, movieId) => request.put(`${baseUrl}/${movieId}`, movieData);
 
-export const deleteGame = (gameId) => request.del(`${baseUrl}/${gameId}`);
+export const deleteMovie = (movieId) => request.del(`${baseUrl}/${movieId}`);
