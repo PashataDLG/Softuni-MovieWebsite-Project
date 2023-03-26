@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import AuthProvider from './context/AuthContext';
+import MovieProvider from './context/MovieContext';
 
 import AddMovie from './components/add-movie/AddMovie';
 import Catalog from './components/catalog/Catlog';
@@ -16,6 +17,7 @@ import Logout from './components/logout/Logout';
 function App() {
 	return (
 		<AuthProvider>
+			<MovieProvider>
 			<>
 				<Navbar />
 				<main>
@@ -32,6 +34,7 @@ function App() {
 				</main>
 				<Footer />
 			</>
+			</MovieProvider>
 		</AuthProvider>
 	);
 }
