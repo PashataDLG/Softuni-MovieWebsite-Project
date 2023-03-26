@@ -8,7 +8,6 @@ export const useLocalStorage = (key, defaultValue) => {
     });
 
     const setLocalStorageState = (newValue) => {
-        console.log(newValue);
         localStorage.setItem(key, JSON.stringify(newValue));
 
         setState(newValue);

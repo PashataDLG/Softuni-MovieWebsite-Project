@@ -13,8 +13,6 @@ const request = async (method, url, data) => {
 
         let headers = {};
 
-        console.log('da')
-
         if (auth.accessToken) {
             headers['X-authorization'] = auth.accessToken
         }
