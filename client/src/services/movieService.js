@@ -1,6 +1,6 @@
 import * as request from './requester';
 
-const baseUrl = 'http://localhost:3030/data/movies'
+const baseUrl = 'http://localhost:3030/data/movies';
 
 export const getAll = () => request.get(baseUrl);
 
