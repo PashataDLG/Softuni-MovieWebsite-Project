@@ -8,8 +8,8 @@ export const login = async ({ email, password }) => {
 }
 
 
-export const register = async ({ email, password }) => {
-    const result = request.post(`${baseUrl}/register`, { email, password });
+export const register = async ({ email, password, username }) => {
+    const result = await request.post(`${baseUrl}/register`, { email, password, username });
     return result;
 }
 

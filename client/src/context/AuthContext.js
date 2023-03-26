@@ -18,14 +18,32 @@ export default function AuthProvider({
 
             setAuth(result);
 
-            navigate('/catalog')
+            navigate('/catalog');
         } catch (err) {
-            console.log('There is a problem');
+            alert('There is a problem: ' + err);
+        }
+    };
+
+    const onRegisterSubmit = async (data) => {
+        try {
+            if(data.password !== data.repeatPassword){
+               throw ('Passwords does not match');
+            };
+
+            const result = await authService.register(data);
+
+            setAuth(result);
+
+            navigate('/catalog');
+            
+        } catch (err) {
+            alert(err)
         }
     };
 
     const contextValues = {
         onLoginSubmit,
+        onRegisterSubmit,
         userId: auth._id
     }
 
