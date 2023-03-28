@@ -35,19 +35,19 @@
     color: #ffffff;
 }
 
-.details-btn {
+.details-link {
+    display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #dbb11a;
     color: #fff;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-.details-btn:hover {
+    text-decoration: none;
+  }
+  
+  .details-link:hover {
     background-color: #796724;
-}
+  }
 
 @media only screen and (max-width: 768px) {
     .movie-catalog {
@@ -59,4 +59,13 @@
     .movie-catalog {
         width: calc(100% - 40px);
     }
+}
+
+.empty-movies {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    margin: 170px;
 }
