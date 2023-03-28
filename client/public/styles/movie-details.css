@@ -146,3 +146,40 @@
     box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 
+/* .btn-edit,
+.btn-delete {
+    position: absolute;
+    bottom: 190px;
+    right: 49px;
+    padding: 0cqb;
+    margin-left: 10px;
+} */
+
+.btn-edit {
+    position: absolute;
+    bottom: 190px;
+    right: 110px;
+    padding: 10px;
+    background-color: #dbb11a;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.btn-delete {
+    position: absolute;
+    bottom: 190px;
+    right: 31px;
+    padding: 10px;
+    background-color: #dbb11a;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+    background-color: #796724;
+}

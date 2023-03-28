@@ -29,6 +29,8 @@ export default function Details() {
                         <strong>Year:</strong> 2020
                     </p>
                 </div>
+                <a href="#" class="btn-edit">Edit</a>
+                <a href="#" class="btn-delete">Delete</a>
             </div>
             <div className="movie-details__comments">
                 <h3 className="movie-details__comments-title">Comments</h3>
