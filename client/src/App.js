@@ -29,7 +29,7 @@ function App() {
 						<Route path='/catalog' element={<Catalog />} />
 						<Route path='/add-movie' element={<AddMovie />} />
 						<Route path='/edit-movie' element={<EditMovie />} />
-						<Route path='/details/:id' element={<Details />} />
+						<Route path='/details/:movieId' element={<Details />} />
 					</Routes>
 				</main>
 				<Footer />

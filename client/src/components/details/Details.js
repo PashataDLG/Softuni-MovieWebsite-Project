@@ -1,36 +1,42 @@
+import { Link, useParams } from "react-router-dom";
+
+import { useMovieContext } from "../../context/MovieContext";
+
 export default function Details() {
+    const { movieId } = useParams();
+    const { movies } = useMovieContext();
+
+    const movie = movies.find(movie => movie._id === movieId);
+
     return (
         <div className="movie-details">
             <div className="movie-details__info">
                 <div className="movie-details__poster">
                     <img
-                        src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg"
+                        src={movie.imageUrl}
                         alt="Movie poster"
                     />
                 </div>
                 <div className="movie-details__content">
-                    <h2 className="movie-details__title">Avengers: Endgame</h2>
+                    <h2 className="movie-details__title">{movie.title}</h2>
                     <p className="movie-details__description">
-                        <strong>Description:</strong> Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Vestibulum fermentum dolor nec tellus
-                        consequat consectetur. Vestibulum quis magna nunc.{" "}
+                        <strong>Description:</strong> {movie.description}
                     </p>
                     <p className="movie-details__genre">
-                        <strong>Genre:</strong> Action, Fantasic, Thriller
+                        <strong>Genre:</strong> {movie.genre}
                     </p>
                     <p className="movie-details__genre">
-                        <strong>Cast:</strong> Robert Downey, Chris Hemsworth, Chris Evans
-                        etc.
+                        <strong>Cast:</strong> {movie.actors}
                     </p>
                     <p className="movie-details__genre">
-                        <strong>Directed By:</strong> Joe Russo and Anthony Russo
+                        <strong>Directed By:</strong> {movie.director}
                     </p>
                     <p className="movie-details__genre">
-                        <strong>Year:</strong> 2020
+                        <strong>Year:</strong> {movie.year}
                     </p>
                 </div>
-                <a href="#" class="btn-edit">Edit</a>
-                <a href="#" class="btn-delete">Delete</a>
+                <Link href="#" className="btn-edit">Edit</Link>
+                <Link href="#" className="btn-delete">Delete</Link>
             </div>
             <div className="movie-details__comments">
                 <h3 className="movie-details__comments-title">Comments</h3>
