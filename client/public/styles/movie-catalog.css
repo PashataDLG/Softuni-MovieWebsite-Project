@@ -13,6 +13,7 @@
     margin: 20px;
     padding: 20px;
     width: calc(25% - 40px);
+    min-height: 400px;
     box-sizing: border-box;
     text-align: center;
     background-color: #000000;
@@ -21,7 +22,8 @@
 
 .movie-catalog img {
     max-width: 100%;
-    height: auto;
+    height: 400px;
+    object-fit: cover;
 }
 
 .movie-catalog h2 {
