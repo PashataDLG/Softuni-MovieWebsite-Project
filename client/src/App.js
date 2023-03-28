@@ -4,7 +4,7 @@ import AuthProvider from './context/AuthContext';
 import MovieProvider from './context/MovieContext';
 
 import AddMovie from './components/add-movie/AddMovie';
-import Catalog from './components/catalog/Catlog';
+import Catalog from './components/catalog/Catalog';
 import Details from './components/details/Details';
 import EditMovie from './components/edit-movie/EditMovie';
 import Footer from './components/footer/Footer';

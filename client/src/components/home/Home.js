@@ -2,9 +2,12 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../context/AuthContext";
+import { useMovieContext } from "../../context/MovieContext";
 
 export default function Home() {
     const { userId } = useContext(AuthContext);
+    const { movies } = useMovieContext();
+
     return (
         <>
             <section className="hero-section">
