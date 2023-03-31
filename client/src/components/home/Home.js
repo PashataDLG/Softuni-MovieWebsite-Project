@@ -1,12 +1,14 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { AuthContext } from "../../context/AuthContext";
+import { useAuthContext } from "../../context/AuthContext";
 import { useMovieContext } from "../../context/MovieContext";
+import HomeItem from "./home-item/HomeItem";
 
 export default function Home() {
-    const { userId } = useContext(AuthContext);
+    const { userId } = useAuthContext()
     const { movies } = useMovieContext();
+
+    const latestMovies = movies.slice(-3);
 
     return (
         <>
@@ -25,33 +27,7 @@ export default function Home() {
             <section className="featured-section">
                 <h2>Latest Movies</h2>
                 <div className="movie-list">
-                    <div className="movie">
-                        <Link to="#">
-                            <img
-                                src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
-                                alt="Movie Poster"
-                            />
-                            <h3>The Dark Knight</h3>
-                        </Link>
-                    </div>
-                    <div className="movie">
-                        <Link to="#">
-                            <img
-                                src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg"
-                                alt="Movie Poster"
-                            />
-                            <h3>Avengers: Endgame</h3>
-                        </Link>
-                    </div>
-                    <div className="movie">
-                        <Link to="#">
-                            <img
-                                src="https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_.jpgg"
-                                alt="Movie Poster"
-                            />
-                            <h3>Black Panther</h3>
-                        </Link>
-                    </div>
+                    {latestMovies.map(movie => <HomeItem key={movie._id} {...movie}/>)}
                 </div>
             </section>
             {!userId &&
