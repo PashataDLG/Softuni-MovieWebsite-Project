@@ -28,7 +28,7 @@ function App() {
 						<Route path='/logout' element={<Logout />} />
 						<Route path='/catalog' element={<Catalog />} />
 						<Route path='/add-movie' element={<AddMovie />} />
-						<Route path='/edit-movie' element={<EditMovie />} />
+						<Route path='/edit-movie/:movieId' element={<EditMovie />} />
 						<Route path='/details/:movieId' element={<Details />} />
 					</Routes>
 				</main>

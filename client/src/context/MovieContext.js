@@ -29,9 +29,18 @@ export default function MovieProvider({
         navigate('/catalog');
     };
 
+    const onEditMovieSubmit = async (movieData) => {
+        const result = await movieService.edit(movieData, movieData._id);
+
+        setMovies(state => state.map(movie => movie._id === movieData._id ? result : movie));
+
+        navigate(`/details/${movieData._id}`);
+    };
+
     const contextValues = {
         movies,
         onCreateMovieSubmit,
+        onEditMovieSubmit,
     }
 
     return (
