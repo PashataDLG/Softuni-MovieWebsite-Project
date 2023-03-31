@@ -8,6 +8,14 @@ export default function Details() {
 
     const movie = movies.find(movie => movie._id === movieId);
 
+    if (!movie) {
+        return (
+            <div className="loading">
+                <div className="spinner"></div>
+            </div>
+        );
+    };
+
     return (
         <div className="movie-details">
             <div className="movie-details__info">
@@ -35,7 +43,7 @@ export default function Details() {
                         <strong>Year:</strong> {movie.year}
                     </p>
                 </div>
-                <Link href="#" className="btn-edit">Edit</Link>
+                <Link to={`/edit-movie/${movie._id}`} className="btn-edit">Edit</Link>
                 <Link href="#" className="btn-delete">Delete</Link>
             </div>
             <div className="movie-details__comments">
