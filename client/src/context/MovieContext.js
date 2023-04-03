@@ -37,10 +37,18 @@ export default function MovieProvider({
         navigate(`/details/${movieData._id}`);
     };
 
+    const onDelete = async (movieId) => {
+        await movieService.deleteMovie(movieId);
+
+        setMovies(movies => movies.filter(movie => movie._id !== movieId));
+    };
+
+
     const contextValues = {
         movies,
         onCreateMovieSubmit,
         onEditMovieSubmit,
+        onDelete
     }
 
     return (

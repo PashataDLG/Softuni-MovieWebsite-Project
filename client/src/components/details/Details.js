@@ -1,12 +1,47 @@
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+
+import * as commentService from "../../services/commentService";
 
 import { useMovieContext } from "../../context/MovieContext";
+import { useAuthContext } from "../../context/AuthContext";
+
+import Comments from "./add-comment/AddComment";
 
 export default function Details() {
+    const [comments, setComments] = useState([]);
+    const { movies, onDelete } = useMovieContext();
+    const { userId } = useAuthContext();
+
     const { movieId } = useParams();
-    const { movies } = useMovieContext();
+    const navigate = useNavigate();
 
     const movie = movies.find(movie => movie._id === movieId);
+
+    useEffect(() => {
+        commentService.getComments(movieId)
+            .then(res => {
+                setComments(res);
+            })
+    }, [movieId]);
+
+    console.log(comments);
+
+    const onClickDelete = async () => {
+        const result = window.confirm(`Are you sure you want to delete ${movie.title}`);
+
+        if (result) {
+            await onDelete(movieId);
+            navigate('/catalog');
+        } else {
+            navigate(`/details/${movieId}`);
+        }
+    };
+
+    const onSubmitComment = async (comment) => {
+        const newComment = await commentService.addComment(movieId, comment);
+        setComments(prevComments => [...prevComments, newComment]);
+    };
 
     if (!movie) {
         return (
@@ -43,46 +78,29 @@ export default function Details() {
                         <strong>Year:</strong> {movie.year}
                     </p>
                 </div>
-                <Link to={`/edit-movie/${movie._id}`} className="btn-edit">Edit</Link>
-                <Link href="#" className="btn-delete">Delete</Link>
+                {
+                    userId === movie._ownerId ? (<>
+                        <Link to={`/edit-movie/${movie._id}`} className="btn-edit">Edit</Link>
+                        <button className="btn-delete" onClick={onClickDelete}>Delete</button>
+                    </>
+                    ) : null}
             </div>
             <div className="movie-details__comments">
                 <h3 className="movie-details__comments-title">Comments</h3>
                 <div className="movie-details__comments-list">
-                    <div className="movie-details__comment">
-                        <p className="movie-details__comment-user">User 1:</p>
-                        <p className="movie-details__comment-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Pellentesque id aliquet ex.
-                        </p>
-                    </div>
-                    <div className="movie-details__comment">
-                        <p className="movie-details__comment-user">User 2:</p>
-                        <p className="movie-details__comment-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Pellentesque id aliquet ex.
-                        </p>
-                    </div>
+                    {comments.length > 0 && comments.map(comment => {
+                        return (
+                            <div className="movie-details__comment" key={comment._id}>
+                                <p className="movie-details__comment-user">{comment.author?.username}:</p>
+                                <p className="movie-details__comment-text">
+                                    {comment.comment?.comment}
+                                </p>
+                            </div>
+                        )
+                    })}
+
                 </div>
-                <form className="movie-details__comment-form">
-                    <h4 className="movie-details__comment-form-title">Add a comment</h4>
-                    <div className="form-group">
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" id="name" name="name" required="" />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="comment">Comment:</label>
-                        <textarea
-                            id="comment"
-                            name="comment"
-                            required=""
-                            defaultValue={""}
-                        />
-                    </div>
-                    <button type="submit" className="btn btn-primary">
-                        Submit
-                    </button>
-                </form>
+                <Comments onSubmitComment={onSubmitComment} />
             </div>
         </div>
     );
