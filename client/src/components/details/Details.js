@@ -25,8 +25,6 @@ export default function Details() {
             })
     }, [movieId]);
 
-    console.log(comments);
-
     const onClickDelete = async () => {
         const result = window.confirm(`Are you sure you want to delete ${movie.title}`);
 
@@ -91,9 +89,9 @@ export default function Details() {
                     {comments.length > 0 && comments.map(comment => {
                         return (
                             <div className="movie-details__comment" key={comment._id}>
-                                <p className="movie-details__comment-user">{comment.author?.username}:</p>
+                                <p className="movie-details__comment-user">{comment.comment.name}:</p>
                                 <p className="movie-details__comment-text">
-                                    {comment.comment?.comment}
+                                    {comment.comment.comment}
                                 </p>
                             </div>
                         )
