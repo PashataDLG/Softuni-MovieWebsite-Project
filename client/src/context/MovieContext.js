@@ -43,12 +43,11 @@ export default function MovieProvider({
         setMovies(movies => movies.filter(movie => movie._id !== movieId));
     };
 
-
     const contextValues = {
         movies,
         onCreateMovieSubmit,
         onEditMovieSubmit,
-        onDelete
+        onDelete,
     }
 
     return (

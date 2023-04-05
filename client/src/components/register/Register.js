@@ -8,6 +8,7 @@ export default function Register() {
     const { values, changeHandler, onSubmit } = useForm({
         'email': '',
         'username': '',
+        'userImg': '',
         'password': '',
         'repeatPassword': '',
     }, onRegisterSubmit);
@@ -36,6 +37,16 @@ export default function Register() {
                         value={values['username']}
                         onChange={changeHandler}
                         required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="email">Profile image</label>
+                    <input
+                        type="userImg"
+                        id="userImg"
+                        name="userImg"
+                        value={values['userImg']}
+                        onChange={changeHandler}
                     />
                 </div>
                 <div className="form-group">

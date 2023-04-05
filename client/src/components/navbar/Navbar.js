@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function Navbar() {
-    const { userId } = useContext(AuthContext);
+    const { userId, username } = useContext(AuthContext);
 
     return (
         <nav className="navbar">
@@ -24,10 +24,13 @@ export default function Navbar() {
                 <Link to="/catalog" className="navbar-link">
                     Catalog
                 </Link>
-                <Link to="/add-movie" className="navbar-link">
-                    Add movie
-                </Link>
                 {userId && (<>
+                    <Link to="/add-movie" className="navbar-link">
+                        Add movie
+                    </Link>
+                    <Link to="/user-profile" className="navbar-link">
+                        {username}'s profile
+                    </Link>
                     <Link to="/logout" className="btn btn-primary">
                         Logout
                     </Link>

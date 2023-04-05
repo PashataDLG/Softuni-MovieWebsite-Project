@@ -26,11 +26,14 @@ export default function Home() {
             </section>
             <section className="featured-section">
                 <h2>Latest Movies</h2>
-                <div className="movie-list">
-                    {latestMovies.map(movie => <HomeItem key={movie._id} {...movie}/>)}
+                <div className="movies-container">
+                    <div className="movie-list">
+                        {latestMovies.map(movie => <HomeItem key={movie._id} {...movie} />)}
+                    </div>
                 </div>
             </section>
-            {!userId &&
+            {
+                !userId &&
                 <section className="create-section">
                     <h2>Create Your Own List</h2>
                     <p>Sign up now and start creating your own list of movies.</p>

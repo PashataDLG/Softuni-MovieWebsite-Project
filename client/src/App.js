@@ -13,6 +13,7 @@ import Login from './components/login/Login';
 import Navbar from './components/navbar/Navbar';
 import Register from './components/register/Register';
 import Logout from './components/logout/Logout';
+import UserProfile from './components/user-profile/UserProfile';
 
 function App() {
 	return (
@@ -30,6 +31,7 @@ function App() {
 						<Route path='/add-movie' element={<AddMovie />} />
 						<Route path='/edit-movie/:movieId' element={<EditMovie />} />
 						<Route path='/details/:movieId' element={<Details />} />
+						<Route path='/user-profile' element={<UserProfile />} />
 					</Routes>
 				</main>
 				<Footer />

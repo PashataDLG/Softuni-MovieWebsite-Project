@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as authService from '../services/authService';
@@ -51,6 +51,7 @@ export default function AuthProvider({
         onLogout,
         userId: auth._id,
         token: auth.accessToken,
+        username: auth.username,
     }
 
     return (
