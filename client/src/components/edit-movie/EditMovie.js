@@ -5,7 +5,6 @@ import * as movieService from '../../services/movieService';
 import { useMovieContext } from "../../context/MovieContext";
 import { useForm } from "../../hooks/useForm";
 
-
 export default function EditMovie() {
     const { movieId } = useParams();
     const { onEditMovieSubmit } = useMovieContext();
@@ -40,6 +39,7 @@ export default function EditMovie() {
                         name="title"
                         value={values.title}
                         onChange={changeHandler}
+                        required
                     />
                 </div>
                 <div className="form-group">
@@ -49,6 +49,7 @@ export default function EditMovie() {
                         name="year"
                         value={values.year}
                         onChange={changeHandler}
+                        required
                     />
                 </div>
                 <div className="form-group">
@@ -58,6 +59,7 @@ export default function EditMovie() {
                         name="imageUrl"
                         value={values.imageUrl}
                         onChange={changeHandler}
+                        required
                     />
                 </div>
                 <div className="form-group">
@@ -67,6 +69,7 @@ export default function EditMovie() {
                         name="genre"
                         value={values.genre}
                         onChange={changeHandler}
+                        required
                     />
                 </div>
                 <div className="form-group">
@@ -76,6 +79,7 @@ export default function EditMovie() {
                         name="actors"
                         value={values.actors}
                         onChange={changeHandler}
+                        required
                     />
                 </div>
                 <div className="form-group">
@@ -85,6 +89,7 @@ export default function EditMovie() {
                         name="director"
                         value={values.director}
                         onChange={changeHandler}
+                        required
                     />
                 </div>
                 <div className="form-group">
@@ -95,6 +100,7 @@ export default function EditMovie() {
                         rows={5}
                         value={values.description}
                         onChange={changeHandler}
+                        required
                     />
                 </div>
                 <div className="form-group">

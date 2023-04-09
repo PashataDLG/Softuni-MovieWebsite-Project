@@ -19,7 +19,7 @@ export default function Comments({
                     type="text"
                     id="name"
                     name="name"
-                    required=""
+                    required
                     value={values.name}
                     onChange={changeHandler} />
             </div>
@@ -28,7 +28,7 @@ export default function Comments({
                 <textarea
                     id="comment"
                     name="comment"
-                    required=""
+                    required
                     value={values.comment}
                     onChange={changeHandler}
                 />
