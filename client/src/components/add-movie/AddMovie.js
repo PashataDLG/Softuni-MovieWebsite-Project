@@ -1,26 +1,26 @@
 import { useForm } from "../../hooks/useForm";
 import { useMovieContext } from "../../context/MovieContext";
 
-const MovieFormKeys = {
-    Title: 'title',
-    Year: 'year',
-    ImageUrl: 'imageUrl',
-    Genre: 'genre',
-    Actors: 'actors',
-    Director: 'director',
-    Description: 'description'
-};
+// const MovieFormKeys = {
+//     Title: 'title',
+//     Year: 'year',
+//     ImageUrl: 'imageUrl',
+//     Genre: 'genre',
+//     Actors: 'actors',
+//     Director: 'director',
+//     Description: 'description'
+// };
 
 export default function AddMovie() {
     const { onCreateMovieSubmit } = useMovieContext();
     const { values, changeHandler, onSubmit } = useForm({
-        [MovieFormKeys.Title]: '',
-        [MovieFormKeys.Year]: '',
-        [MovieFormKeys.ImageUrl]: '',
-        [MovieFormKeys.Genre]: '',
-        [MovieFormKeys.Actors]: '',
-        [MovieFormKeys.Director]: '',
-        [MovieFormKeys.Description]: '',
+        title: '',
+        year: '',
+        imageUrl: '',
+        genre: '',
+        actors: '',
+        director: '',
+        description: '',
     }, onCreateMovieSubmit);
 
     return (
@@ -32,70 +32,70 @@ export default function AddMovie() {
                     <input
                         type="text"
                         id="title"
-                        name={MovieFormKeys.Title}
-                        value={values[MovieFormKeys.Title]}
+                        name='title'
+                        value={values.title}
                         onChange={changeHandler}
-                        required="" />
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="year">Year</label>
                     <input
                         type="text"
                         id="year"
-                        name={MovieFormKeys.Year}
-                        value={values[MovieFormKeys.Year]}
+                        name="year"
+                        value={values.year}
                         onChange={changeHandler}
-                        required="" />
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="year">Image</label>
                     <input
                         type="text"
                         id="imageUrl"
-                        name={MovieFormKeys.ImageUrl}
-                        value={values[MovieFormKeys.ImageUrl]}
+                        name="imageUrl"
+                        value={values.imageUrl}
                         onChange={changeHandler}
-                        required="" />
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="genre">Genre</label>
                     <input
                         type="text"
                         id="genre"
-                        name={MovieFormKeys.Genre}
-                        value={values[MovieFormKeys.Genre]}
+                        name="genre"
+                        value={values.genre}
                         onChange={changeHandler}
-                        required="" />
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="actors">Actors</label>
                     <input
                         type="text"
                         id="actors"
-                        name={MovieFormKeys.Actors}
-                        value={values[MovieFormKeys.Actors]}
+                        name="actors"
+                        value={values.actors}
                         onChange={changeHandler}
-                        required="" />
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="director">Directed By</label>
                     <input
                         type="text"
                         id="director"
-                        name={MovieFormKeys.Director}
-                        value={values[MovieFormKeys.Director]}
+                        name="director"
+                        value={values.director}
                         onChange={changeHandler}
-                        required="" />
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="description">Description</label>
                     <textarea
                         id="description"
                         rows={5}
-                        name={MovieFormKeys.Description}
-                        value={values[MovieFormKeys.Description]}
+                        name="description"
+                        value={values.description}
                         onChange={changeHandler}
-                        required=""
+                        required
                     />
                 </div>
                 <div className="form-group">
