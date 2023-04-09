@@ -10,7 +10,6 @@ export const useForm = (initialValues, onSubmitHandler) => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        console.log(values);
         onSubmitHandler(values);
 
         setValues(initialValues);
