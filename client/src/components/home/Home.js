@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import { useAuthContext } from "../../context/AuthContext";
 import { useMovieContext } from "../../context/MovieContext";
+
 import HomeItem from "./home-item/HomeItem";
 
 export default function Home() {
@@ -28,7 +29,14 @@ export default function Home() {
                 <h2>Latest Movies</h2>
                 <div className="movies-container">
                     <div className="movie-list">
-                        {latestMovies.map(movie => <HomeItem key={movie._id} {...movie} />)}
+                        {movies.length > 0
+                            ? latestMovies.map(movie => <HomeItem key={movie._id} {...movie} />)
+                            : <div className="movie-ctlg">
+                                <div className="movies-container"></div>
+                                <h2 className="empty-catalog">No movies available at the moment</h2>
+                            </div>
+                        }
+
                     </div>
                 </div>
             </section>

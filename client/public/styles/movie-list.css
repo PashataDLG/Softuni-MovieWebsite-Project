@@ -1,14 +1,25 @@
 .movie-list {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
+    grid-gap: -80x;
+    /* Reduce the gap to 10px */
     justify-items: center;
+}
+
+.movies-container .movie-list {
+    grid-gap: 10px;
 }
 
 
 .movie {
-    text-align: center;
-}
+    position: relative;
+    width: 300px; /* adjust as needed */
+    height: 400px; /* adjust as needed */
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+  
 
 .movie-list .movie:nth-child(odd):last-child {
     margin-right: auto;
@@ -16,20 +27,27 @@
 }
 
 .movie img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-}
+    height: 100%;
+    object-fit: cover;
+  }
 
-.movie h3 {
-    font-size: 24px;
-    margin-top: 10px;
-    color: #ffffff;
-}
 
+  .movie h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  
 @media (max-width: 991px) {
     .movie {
         flex-basis: 45%;

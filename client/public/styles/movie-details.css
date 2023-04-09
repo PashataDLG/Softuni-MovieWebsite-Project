@@ -19,9 +19,11 @@
 }
 
 .movie-details__poster img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #dbb11a;
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+    border: 3px solid #dbb11a;
+    box-sizing: border-box;
 }
 
 .movie-details__content {
@@ -126,6 +128,20 @@
     width: 640px;
 }
 
+.movie-container {
+    position: relative;
+    width: 300px;
+    /* adjust as needed */
+    height: 450px;
+    /* adjust as needed */
+}
+
+.movie-details__poster {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
 .btn.btn-primary {
     display: inline-block;
     background-color: #dbb11a;
@@ -155,23 +171,27 @@
     margin-left: 10px;
 } */
 
+
 .btn-edit {
     position: absolute;
-    bottom: 190px;
-    right: 110px;
+    top: 520px;
+    right: 33px;
     padding: 10px;
     background-color: #dbb11a;
     border: none;
     border-radius: 4px;
     color: #ffffff;
     cursor: pointer;
+    width: 60px;
+    text-align: center;
+    height: 43px;
 }
 
 .btn-delete {
     position: absolute;
-    bottom: 190px;
-    right: 31px;
-    padding: 10px;
+    top: 520px;
+    right: 105px;
+    padding: 14px;
     background-color: #dbb11a;
     border: none;
     border-radius: 4px;
@@ -179,7 +199,15 @@
     cursor: pointer;
 }
 
+
 .btn-edit:hover,
 .btn-delete:hover {
     background-color: #796724;
+}
+
+.no-commentsh2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    color: #fff;
 }

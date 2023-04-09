@@ -27,7 +27,7 @@ export default function AuthProvider({
     const onRegisterSubmit = async (data) => {
         try {
             if(data.password !== data.repeatPassword){
-               throw ('Passwords does not match');
+               throw new Error('Passwords does not match');
             };
 
             const result = await authService.register(data);
@@ -37,7 +37,7 @@ export default function AuthProvider({
             navigate('/catalog');
             
         } catch (err) {
-            alert(err)
+            alert('There is a problem: ' + err);
         }
     };
 
@@ -60,7 +60,7 @@ export default function AuthProvider({
                 {children}
             </AuthContext.Provider>
         </>
-    )
+    );
 };
 
 export const useAuthContext = () => {

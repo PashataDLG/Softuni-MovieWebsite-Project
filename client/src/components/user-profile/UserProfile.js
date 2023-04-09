@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import { useMovieContext } from '../../context/MovieContext';
 import * as userService from '../../services/userService';
+
 import UserProfileMovies from './user-profile-movies/UserProfileMovies';
 
 export default function UserProfile() {
@@ -17,8 +20,6 @@ export default function UserProfile() {
 
 	const userMovies = user ? movies.filter(movie => movie._ownerId === user._id) : [];
 
-	console.log(userMovies);
-
 	return (
 		<div className="user-profile">
 			<div className="user-info">
@@ -33,7 +34,7 @@ export default function UserProfile() {
 						? userMovies.map(movie => <UserProfileMovies key={movie._id} {...movie} />)
 						: <div class="movie-ctlg">
 							<div class="movies-container"></div>
-							<h1 class="empty-movies hidden">You haven't added any movies yet. Click <a href='/add-movie'>here</a> to add a movie.</h1>
+							<h2 class="empt-movies">You haven't added any movies yet. Click <Link to='/add-movie'>here</Link> to add a movie.</h2>
 						</div>
 					}
 				</div>

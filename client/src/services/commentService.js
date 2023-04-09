@@ -9,7 +9,7 @@ export const getComments = async (movieId) => {
     const result = await request.get(`${baseUrl}?where=${search}&load=${relation}`);
     const comments = Object.values(result);
 
-    return comments
+    return comments;
 };
 
 export const addComment = async (movieId, comment) => {
